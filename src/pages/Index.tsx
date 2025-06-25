@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 
 const Index = () => {
@@ -33,7 +34,7 @@ const Index = () => {
                           document.querySelector('.chatway-button');
         
         if (chatButton) {
-          chatButton.click();
+          (chatButton as HTMLElement).click();
         }
       }, 1000);
     };
