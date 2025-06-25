@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
-
 const Index = () => {
   useEffect(() => {
     // Create and append the Chatway script
@@ -14,10 +13,7 @@ const Index = () => {
       // Wait a bit for the widget to initialize
       setTimeout(() => {
         // Try to find and click the chat widget to open it
-        const chatWidget = document.querySelector('[data-chatway-widget]') || 
-                          document.querySelector('.chatway-widget') ||
-                          document.querySelector('#chatway-widget');
-        
+        const chatWidget = document.querySelector('[data-chatway-widget]') || document.querySelector('.chatway-widget') || document.querySelector('#chatway-widget');
         if (chatWidget) {
           // If widget has a click handler, trigger it
           const clickEvent = new MouseEvent('click', {
@@ -29,10 +25,7 @@ const Index = () => {
         }
 
         // Alternative: Try to find the chat button and click it
-        const chatButton = document.querySelector('[data-chatway-trigger]') ||
-                          document.querySelector('.chatway-trigger') ||
-                          document.querySelector('.chatway-button');
-        
+        const chatButton = document.querySelector('[data-chatway-trigger]') || document.querySelector('.chatway-trigger') || document.querySelector('.chatway-button');
         if (chatButton) {
           (chatButton as HTMLElement).click();
         }
@@ -50,9 +43,7 @@ const Index = () => {
       }
     };
   }, []);
-
-  return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+  return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           Chatway Live Chat
@@ -65,15 +56,13 @@ const Index = () => {
       {/* Floating Arrow Indicator - Always Visible */}
       <div className="fixed bottom-24 right-8 z-50 flex flex-col items-center animate-bounce">
         <div className="bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg mb-2 relative">
-          <span className="text-sm font-medium whitespace-nowrap">Click here to chat with us!</span>
+          <span className="text-sm font-medium whitespace-nowrap"> Live Chat With US</span>
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
             <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-blue-500"></div>
           </div>
         </div>
         <ArrowDown className="text-blue-500 w-6 h-6 animate-pulse" />
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
