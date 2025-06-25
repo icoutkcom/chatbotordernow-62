@@ -1,10 +1,7 @@
-
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { ArrowDown } from 'lucide-react';
 
 const Index = () => {
-  const [showArrow, setShowArrow] = useState(true);
-
   useEffect(() => {
     // Create and append the Chatway script
     const script = document.createElement('script');
@@ -39,9 +36,6 @@ const Index = () => {
         if (chatButton) {
           (chatButton as HTMLElement).click();
         }
-
-        // Hide arrow after chat is opened
-        setShowArrow(false);
       }, 1000);
     };
 
@@ -57,13 +51,8 @@ const Index = () => {
     };
   }, []);
 
-  // Hide arrow when user clicks anywhere (assuming they might interact with chat)
-  const handlePageClick = () => {
-    setShowArrow(false);
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center" onClick={handlePageClick}>
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-800 mb-4">
           Chatway Live Chat
@@ -73,18 +62,16 @@ const Index = () => {
         </p>
       </div>
 
-      {/* Floating Arrow Indicator */}
-      {showArrow && (
-        <div className="fixed bottom-24 right-8 z-50 flex flex-col items-center animate-bounce">
-          <div className="bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg mb-2 relative">
-            <span className="text-sm font-medium whitespace-nowrap">Click here to chat with us!</span>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
-              <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-blue-500"></div>
-            </div>
+      {/* Floating Arrow Indicator - Always Visible */}
+      <div className="fixed bottom-24 right-8 z-50 flex flex-col items-center animate-bounce">
+        <div className="bg-blue-500 text-white px-3 py-2 rounded-lg shadow-lg mb-2 relative">
+          <span className="text-sm font-medium whitespace-nowrap">Click here to chat with us!</span>
+          <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full">
+            <div className="w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-l-transparent border-r-transparent border-t-blue-500"></div>
           </div>
-          <ArrowDown className="text-blue-500 w-6 h-6 animate-pulse" />
         </div>
-      )}
+        <ArrowDown className="text-blue-500 w-6 h-6 animate-pulse" />
+      </div>
     </div>
   );
 };
