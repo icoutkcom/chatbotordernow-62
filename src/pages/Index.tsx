@@ -46,7 +46,7 @@ const Index = () => {
   return <div className="min-h-screen flex items-center justify-center bg-gray-950">
       <div className="text-center">
         <h1 className="mb-4 font-extrabold text-5xl text-zinc-50">LIVE CHAT</h1>
-        <p className="text-lg text-gray-50">
+        <p className="text-gray-50 text-base">
           Your chat support is ready and always available!
         </p>
       </div>
