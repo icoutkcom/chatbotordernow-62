@@ -43,10 +43,10 @@ const Index = () => {
       }
     };
   }, []);
-  return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+  return <div className="min-h-screen flex items-center justify-center bg-gray-950">
       <div className="text-center">
-        <h1 className="text-gray-800 mb-4 font-extrabold text-5xl">LIVE CHAT</h1>
-        <p className="text-lg text-gray-600">
+        <h1 className="mb-4 font-extrabold text-5xl text-zinc-50">LIVE CHAT</h1>
+        <p className="text-lg text-gray-50">
           Your chat support is ready and always available!
         </p>
       </div>
